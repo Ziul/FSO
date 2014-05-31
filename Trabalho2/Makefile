@@ -1,8 +1,8 @@
 
 XX = gcc
 
-SRC = 	main.c	\
-		convert.c
+SRC = 	convert.c	\
+		main.c
 
 OBJS = ${SRC:.cpp=.o}
 
