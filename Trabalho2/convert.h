@@ -3,6 +3,6 @@
 #define __CONVERT__H__
 
  char* 
- tradicional(char* data, unsigned int size);
+ tradicional(char* data, unsigned int* size);
 
 #endif
