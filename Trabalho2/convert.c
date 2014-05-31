@@ -1,9 +1,15 @@
  
 #include <convert.h>
 
- const char* 
- tradicional(const char* data, unsigned int size)
+
+
+
+ char* 
+ tradicional(char* data, unsigned int size)
  {
+
+
+
 
  	return data;
  }
