@@ -1,12 +1,12 @@
 
-XX = g++
+XX = gcc
 
-SRC = 	main.cpp	\
-		son.cpp
+SRC = 	main.c	\
+		convert.c
 
 OBJS = ${SRC:.cpp=.o}
 
-CFLAGS =-I./  -g3 -ansi -pedantic -lpthread -std=c++0x
+CFLAGS =-I./  -g3 -ansi -pedantic -lpthread
 
 OUTPUT = Trabalho
 
