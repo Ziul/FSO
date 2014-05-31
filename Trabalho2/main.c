@@ -2,14 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 80
-
 int main(int argc, char const *argv[])
 {
 	char * coluna;
 	FILE * dumb;
+	unsigned int SIZE, i;
 
 	dumb = fopen("dumb_file", "r");
+
+	fseek(dumb, 0, SEEK_END);
+	SIZE = ftell(dumb)+1;
+	fseek(dumb, 0, SEEK_SET);
 
 	coluna = (char *)calloc(SIZE, sizeof(char));
 	if (coluna == NULL)
@@ -18,12 +21,15 @@ int main(int argc, char const *argv[])
 		return 0;
 	}
 
-	for (int i = 0; i < SIZE; ++i)
+	for (i = 0; i < SIZE; ++i)
 	{
 		fscanf(dumb, "%c", &coluna[i]);
 	}
 
-	tradicional(coluna, SIZE);
+	tradicional(coluna, &SIZE);
+
+	free(dumb);
+	free(coluna);
 
 	return 0;
 }
