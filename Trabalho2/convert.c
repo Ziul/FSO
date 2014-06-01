@@ -56,8 +56,8 @@ reorder_lines(char* data, unsigned int *size)
 		}
 		new_data[i] = data[i];
 	}
-	new_data[++i] = ' ';
-	new_data[++i] = '\0';
+	new_data[i++] = ' ';
+	new_data[i] = '\0';
 
 	*size = i+1;
 	data= new_data;
@@ -71,7 +71,7 @@ reorder_lines(char* data, unsigned int *size)
 
  	replace_char('\n',' ',data,size);
  	replace_string("**",'#',data,size);
- 	reorder_lines(data, size);
+ 	data = reorder_lines(data, size);
 
  	return data;
  }
