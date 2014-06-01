@@ -36,6 +36,7 @@ replace_string(char* c1, char c2, char* data, unsigned int *size)
 	}
 
 	*size = i+1;
+	data= new_data;
 	return new_data;
 }
 
@@ -59,6 +60,7 @@ reorder_lines(char* data, unsigned int *size)
 	new_data[++i] = '\0';
 
 	*size = i+1;
+	data= new_data;
 	return new_data;
 }
 
@@ -67,9 +69,9 @@ reorder_lines(char* data, unsigned int *size)
  tradicional(char* data, unsigned int *size)
  {
 
- 	data = replace_char('\n',' ',data,size);
- 	data = replace_string("**",'#',data,size);
- 	data = reorder_lines(data, size);
+ 	replace_char('\n',' ',data,size);
+ 	replace_string("**",'#',data,size);
+ 	reorder_lines(data, size);
 
  	return data;
  }

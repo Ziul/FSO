@@ -26,7 +26,11 @@ int main(int argc, char const *argv[])
 		coluna[i] = fgetc(dumb);
 	}
 
+	printf("%s [%d]",coluna,SIZE);
+
 	tradicional(coluna, &SIZE);
+
+	printf("%s [%d]",coluna,SIZE);
 
 	free(dumb);
 	free(coluna);
