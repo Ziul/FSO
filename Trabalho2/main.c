@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
 
 	for (i = 0; i < SIZE; ++i)
 	{
-		fscanf(dumb, "%c", &coluna[i]);
+		coluna[i] = fgetc(dumb);
 	}
 
 	tradicional(coluna, &SIZE);
