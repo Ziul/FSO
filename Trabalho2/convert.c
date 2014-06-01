@@ -54,7 +54,7 @@ reorder_lines(char* data, unsigned int *size)
 
 	for (i=0,j=0;i<*size; i++,j++)
 	{
-		if ( ((j%NEW_BREAK_LINE)==0) && i>2 )
+		if ( ((i%NEW_BREAK_LINE)==0) && i>2 )
 		{
 			new_data[j]='\n';
 			j++;
